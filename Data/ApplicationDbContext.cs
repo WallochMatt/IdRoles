@@ -11,16 +11,17 @@ namespace IdRoles.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
 
-            builder.Entity<IdentityRole>()
-                .HasData(new IdentityRole
-                {
-                    Name = "Admin",
-                    NormalizedName = "ADMIN"
-                }
+            modelBuilder.Entity<IdentityRole>()
+                .HasData(
+                    new IdentityRole
+                    {
+                        Name = "Admin",
+                        NormalizedName = "ADMIN"
+                    }
                 );
         }
     }
